@@ -1,0 +1,54 @@
+﻿@model TestAuthentification.Models.Medecin
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste des consultations de @Model.DisplayName</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Motif
+            </th>
+            <th>
+                Remarques
+            </th>
+            <th>
+               Patient
+            </th>
+          
+            <th>
+                DateConsultation
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Consultations)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Motif)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remarques)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.DisplayName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateConsultation)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TestAuthentification.Models.Medecin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste des médecins</h1>
+
+<br />
+<br />
+<form asp-action="Index" method="GET">
+
+        <label for="search" class="control-label">Rechercher :</label>
+        <input type="text" id="search" name="search" 
+             placeholder="Entrez votre recherche" >
+        <button type="submit">Rechercher</button>
+
+</form>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresse)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="ListeConsultationByMedecin" asp-route-id="@item.Id">Mes consultations</a> |
+
+                    
+                <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

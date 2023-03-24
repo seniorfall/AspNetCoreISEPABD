@@ -1,0 +1,105 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model IPagedList<TestAuthentification.Models.Consultation>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste des consultations</h1>
+
+<p>
+    <a asp-action="Create">Nouvelle consultation</a>
+</p>
+<br /><br />
+<form action="index" method="GET">
+    <label for="search" class="control-label">Rechercher :</label>
+    <input type="text" id="search" name="search" placeholder="Entrez votre recherche" class="form-control">
+    <button type="submit" class="btn btn-secondary">Rechercher</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Motif
+            </th>
+            <th>
+                Remarques
+            </th>
+            <th>
+               Patient
+            </th>
+            <th>
+                Medecin
+            </th>
+            <th>
+                Date Consulltation
+            </th>
+            <th>
+                Type consultation
+            </th>
+            <th>
+                Prochain Consultation
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motif)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarques)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.DisplayName)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Medecin.DisplayName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateConsultation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeConsultation.Nom)
+                </td>
+                <td>
+                    @if (item.ProchainConsultation == null)
+                    {
+                        <p><i class="fa-regular fa-note"></i></p>
+                    }
+                    else{
+                        @Html.DisplayFor(modelItem => item.ProchainConsultation)
+                    }
+
+                </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> 
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<nav>
+    @Html.PagedListPager(Model, page => Url.Action("index", new { page = page }), new PagedListRenderOptions()
+    {
+    ActiveLiElementClass = "active",
+    PageClasses = new[]{ "page-link"},
+    LiElementClasses=new[] { "page-item" },
+    UlElementClasses = new[] { "pagination","justify-content-center", "mt-3" },
+    LinkToNextPageFormat = "Next",
+    LinkToPreviousPageFormat = "Previous",
+    MaximumPageNumbersToDisplay = 5,
+    DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+    DisplayLinkToNextPage = PagedListDisplayMode.Always
+    })
+</nav>
