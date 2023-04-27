@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marie\\source\\repos\\TestAuthentification2\\TestAuthentification\\TestAuthentification\\TestAuthentification.csproj": {}
+    "C:\\Users\\sfall\\OneDrive\\Documents\\Cours\\test\\AspNetCoreISEPABD\\TestAuthentification\\TestAuthentification.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marie\\source\\repos\\TestAuthentification2\\TestAuthentification\\TestAuthentification\\TestAuthentification.csproj": {
+    "C:\\Users\\sfall\\OneDrive\\Documents\\Cours\\test\\AspNetCoreISEPABD\\TestAuthentification\\TestAuthentification.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marie\\source\\repos\\TestAuthentification2\\TestAuthentification\\TestAuthentification\\TestAuthentification.csproj",
+        "projectUniqueName": "C:\\Users\\sfall\\OneDrive\\Documents\\Cours\\test\\AspNetCoreISEPABD\\TestAuthentification\\TestAuthentification.csproj",
         "projectName": "TestAuthentification",
-        "projectPath": "C:\\Users\\marie\\source\\repos\\TestAuthentification2\\TestAuthentification\\TestAuthentification\\TestAuthentification.csproj",
-        "packagesPath": "C:\\Users\\marie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marie\\source\\repos\\TestAuthentification2\\TestAuthentification\\TestAuthentification\\obj\\",
+        "projectPath": "C:\\Users\\sfall\\OneDrive\\Documents\\Cours\\test\\AspNetCoreISEPABD\\TestAuthentification\\TestAuthentification.csproj",
+        "packagesPath": "C:\\Users\\sfall\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sfall\\OneDrive\\Documents\\Cours\\test\\AspNetCoreISEPABD\\TestAuthentification\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sfall\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
